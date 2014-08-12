@@ -17,7 +17,7 @@ class normal::params {
   ## General parameters
   $system_date = strftime("%Y%m%d%H%M")
 
-  $install_reference = $normal::package ? {
+  $install_reference = $package ? {
     ''      => undef,
     default => Package['normal'],
   }
