@@ -189,17 +189,18 @@ class normal (
   $package_ensure      = $normal::params::package_ensure
 
   ## Configuration file ralated parameters
-  $config_dir          = $normal::params::config_dir
-  $config_file         = $normal::params::config_file
-  $config_file_init    = $normal::params::config_file_init
-  $config_file_ensure  = $normal::params::config_file_ensure
-  $config_file_mode    = $normal::params::config_file_mode
-  $config_file_owner   = $normal::params::config_file_owner
-  $config_file_group   = $normal::params::config_file_group
-  $config_file_content = $normal::params::config_file_content
-  $config_file_source  = $normal::params::config_file_source
-  $config_file_audit   = $normal::params::config_file_audit
-  $config_file_replace = $normal::params::config_file_replace
+  $config_dir              = $normal::params::config_dir
+  $config_file             = $normal::params::config_file
+  $config_file_init        = $normal::params::config_file_init
+  $config_file_init_source = $normal::params::config_file_init_source
+  $config_file_ensure      = $normal::params::config_file_ensure
+  $config_file_mode        = $normal::params::config_file_mode
+  $config_file_owner       = $normal::params::config_file_owner
+  $config_file_group       = $normal::params::config_file_group
+  $config_file_content     = $normal::params::config_file_content
+  $config_file_source      = $normal::params::config_file_source
+  $config_file_audit       = $normal::params::config_file_audit
+  $config_file_replace     = $normal::params::config_file_replace
 
   ## Data ralated parameters
   $data_dir            = $normal::params::data_dir

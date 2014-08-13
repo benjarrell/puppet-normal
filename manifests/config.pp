@@ -24,7 +24,7 @@ class normal::config{
       mode    => $normal::config_file_mode,
       owner   => $normal::config_file_owner,
       group   => $normal::config_file_group,
-      source  => $normal::confinit,
+      source  => $normal::config_file_init_source,
       replace => $normal::config_file_replace,
       audit   => $normal::config_file_audit,
       notify  => $normal::service_reference,

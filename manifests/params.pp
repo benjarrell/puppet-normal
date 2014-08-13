@@ -22,9 +22,12 @@ class normal::params {
     default => Package['normal'],
   }
 
-  $service_reference = $normal::restart ? {
-    false   => undef,
-    default => Service['normal'],
+  $service_reference = $normal::audit_only ? {
+    true    => undef,
+    default => $normal::restart ? {
+      false   => undef,
+      default => Service['normal'],
+    },
   }
 
   case $::osfamily {
@@ -60,6 +63,11 @@ class normal::params {
   $config_file_init = $::osfamily ? {
     /(?i:redhat)/ => '/etc/sysconfig/normal',
     default       => '',
+  }
+
+  $config_file_init_source = $normal::confinit ? {
+    ''      => undef,
+    default => $normal::confinit
   }
 
   $config_file_ensure = $normal::absent ? {
