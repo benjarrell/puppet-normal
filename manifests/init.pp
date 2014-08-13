@@ -175,9 +175,9 @@ class normal (
   validate_bool($disboot)
   validate_bool($audit_only)
   validate_bool($restart)
-  validate_hash($options)
-  validate_hash($confdir)
-  validate_hash($datadir)
+  if $options { validate_hash($options) }
+  if $confdir { validate_hash($confdir) }
+  if $datadir { validate_hash($datadir) }
 
   ## General parameters
   $system_date         = $normal::params::system_date
