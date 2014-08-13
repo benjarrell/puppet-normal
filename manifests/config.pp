@@ -33,7 +33,7 @@ class normal::config{
   }
 
   ## Managed extra configuration file
-  if is_hash($normal::confdir) {
+  if $normal::confdir {
     create_resources(normal::confdir,$normal::confdir)
   }
 }
