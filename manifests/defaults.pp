@@ -20,4 +20,5 @@ class normal::defaults {
   $confdir      = ''
   $confinit     = ''
   $datadir      = ''
+  $my_class     = ''
 }

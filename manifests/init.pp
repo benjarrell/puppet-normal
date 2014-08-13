@@ -165,8 +165,19 @@ class normal (
   $confdir             = $normal::defaults::confdir,
   $confinit            = $normal::defaults::confinit,
   $datadir             = $normal::defaults::datadir,
+  $my_class            = $normal::defaults::my_class,
   ) inherits normal::defaults {
   contain 'normal::params'
+
+  ## Input parameters validation
+  validate_bool($absent)
+  validate_bool($disable)
+  validate_bool($disboot)
+  validate_bool($audit_only)
+  validate_bool($restart)
+  validate_hash($options)
+  validate_hash($confdir)
+  validate_hash($datadir)
 
   ## General parameters
   $system_date         = $normal::params::system_date
@@ -212,6 +223,9 @@ class normal (
   contain 'normal::config'
   contain 'normal::service'
   contain 'normal::data'
+  if $my_class {
+    contain "${my_class}"
+  }
 
   ## Relationship of classes
   Class['normal::install'] -> Class['normal::config'] -> Class['normal::service'] -> Class['normal::data']
