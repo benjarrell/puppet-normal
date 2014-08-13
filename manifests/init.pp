@@ -66,6 +66,10 @@
 #     * group
 #     * mode
 #
+# [*my_class*]
+#   Automatically include a custom class with extra resources related to normal.
+#   Note: Use a subclass name different than normal to avoid order loading issues.
+#
 # === Examples
 #
 # You can use this class in 3 ways:
@@ -145,6 +149,15 @@
 #              mode     => 0600,
 #            },
 #          },
+#        }
+#
+# Add extra resources to modules
+#
+#        class hack_normal {
+#          # extra resources here
+#        }
+#        class { "normal":
+#          my_class => "hack_normal",
 #        }
 #
 # === Authors
