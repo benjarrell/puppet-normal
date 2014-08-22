@@ -163,7 +163,7 @@
 # === Authors
 #
 # Hailu Ju <linuxcpp.org@gmail.com>
-# Jack Chen <jackchen@bsgchina.com>
+# KissPuppet <yum.linux@gmail.com>
 #
 class normal (
   $absent              = $normal::defaults::absent,
